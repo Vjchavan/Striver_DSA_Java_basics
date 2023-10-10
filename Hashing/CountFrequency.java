@@ -21,6 +21,5 @@ public class CountFrequency {
         for (int a:res) {
             System.out.println(a);
         }
-
     }
 }
