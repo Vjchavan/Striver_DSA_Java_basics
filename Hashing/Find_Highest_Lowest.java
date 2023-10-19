@@ -1,9 +1,6 @@
 package Hashing;
 
-import java.util.HashSet;
-import java.util.Scanner;
-import java.util.TreeMap;
-import java.util.TreeSet;
+import java.util.*;
 
 public class Find_Highest_Lowest {
 
@@ -18,30 +15,43 @@ public class Find_Highest_Lowest {
             arr[i] = in.nextInt();
         }
 
-        TreeSet<Integer> hash = new TreeSet<>();
+        HashMap<Integer,Integer> hm = new HashMap<>();
 
         for (int i = 0; i < arr.length; i++) {
-            if (hash.contains(arr[i])) continue;
+            if (hm.containsKey(arr[i])) {
 
-            hash.add(arr[i]);
-        }
+                hm.put(arr[i], hm.get(arr[i])+1);
 
-        System.out.println(hash);
+            } else {
 
-        //*************** Using TreeMap ********************
+                hm.put(arr[i], 1);
 
-        int [] res = new int[2];
-
-        TreeMap<Integer,Integer> map = new TreeMap<>();
-
-        for (int i = 0; i < arr.length; i++) {
-            if (map.containsKey(arr[i])){
-                map.put(arr[i], map.get(arr[i])+1);
             }
-            map.put(arr[i],1 );
         }
 
-        System.out.println(map);
+        int maxEle=0;
+        int minEle=0;
+        int minFreq=arr.length;
+        int maxFreq=0;
+
+        for(Map.Entry<Integer, Integer> ele : hm.entrySet()){
+            int freq = ele.getValue();
+            int element = ele.getKey();
+
+            if(freq > maxFreq){
+                maxEle = element;
+                maxFreq = freq;
+            }
+
+            if(freq < minFreq){
+                minEle = element;
+                minFreq = freq;
+            }
+
+        }
+
+        System.out.println(maxFreq+"  "+minFreq);
+
     }
 
 }
