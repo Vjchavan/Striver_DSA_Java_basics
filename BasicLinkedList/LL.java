@@ -15,6 +15,7 @@ public class LL {
     }
 
     void printLL(){
+        System.out.println("Printing LL - ");
         Node temp = head;
         while (temp!=null){
             System.out.print(temp.value+" ");
@@ -24,10 +25,12 @@ public class LL {
     }
 
     void appendLL(int value){
+        System.out.println("Appending "+value);
         Node node = new Node(value);
         if (len==0){
             head = node;
             tail = node;
+            len=1;
         }
         else {
             tail.next = node;
@@ -36,7 +39,24 @@ public class LL {
         }
     }
 
+    void prependLL(int value){
+        System.out.println("PrePending "+value);
+        Node node = new Node(value);
+        if (len==0){
+            head=node;
+            tail=node;
+            len=1;
+        }
+        else {
+            Node temp = head;
+            head = node;
+            node.next = temp;
+            len++;
+        }
+    }
+
     void RemoveLast(){
+        System.out.println("Removing last node");
         if(len==0){
             return;
         }
@@ -51,6 +71,20 @@ public class LL {
         len--;
         if (len==0){
             head = null;
+            tail = null;
+        }
+    }
+
+    void removeFirst(){
+        System.out.println("Removing first node");
+        if (len==0) return;
+
+        Node temp = head;
+        head = head.next;
+        temp.next = null;
+        len--;
+
+        if (len==0){
             tail = null;
         }
     }
