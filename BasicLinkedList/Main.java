@@ -8,6 +8,8 @@ public class Main {
 
         LL ll = new LL(1);
 
+        System.out.println(ll.head.value);
+
         for (int i=0;i<4;i++){
             ll.appendLL(in.nextInt());
         }
