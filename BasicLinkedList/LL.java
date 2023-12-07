@@ -14,8 +14,26 @@ public class LL {
         len = 1;
     }
 
+    void removeElement(int value){
+        if (head==null){
+            System.out.println("Empty LL");
+            return;
+        }
+        Node temp = head;
+        Node back = null;
+
+        while(temp!=null){
+            if (temp.value == value){
+                back = temp.next;
+                temp.next = null;
+
+            }
+            back = temp;
+            temp = temp.next;
+        }
+    }
+
     void printLL(){
-        System.out.println("Printing LL - ");
         Node temp = head;
         while (temp!=null){
             System.out.print(temp.value+" ");

@@ -8,19 +8,19 @@ public class Main {
 
         LL ll = new LL(1);
 
-        System.out.println(ll.head.value);
-
         for (int i=0;i<4;i++){
             ll.appendLL(in.nextInt());
         }
 
         ll.printLL();
-        ll.RemoveLast();
-        System.out.println();
+        ll.removeElement(1);
         ll.printLL();
-        ll.prependLL(3);
-        ll.printLL();
-        ll.removeFirst();
-        ll.printLL();
+//        ll.RemoveLast();
+//        System.out.println();
+//        ll.printLL();
+//        ll.prependLL(3);
+//        ll.printLL();
+//        ll.removeFirst();
+//        ll.printLL();
     }
 }
