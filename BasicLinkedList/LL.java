@@ -14,6 +14,28 @@ public class LL {
         len = 1;
     }
 
+//    void midOfLL(){
+//        int mid = len/2;
+//        int start=0;
+//        System.out.println(mid+1);
+//        while(len>mid){
+//            System.out.println(head.value);
+//            head = head.next;
+//            len--;
+//        }
+//        System.out.println("mid "+head.value);
+//    }
+
+    void midOfLL(){
+        Node p1 = head;
+        Node p2 = head;
+        while(p2 != null && p2.next != null){
+            // In each iteration, we move p1 one node forward and we move p2 two nodes forward...
+            p1 = p1.next;
+            p2 = p2.next.next;
+        }
+    }
+
     void removeElement(int value){
         if (head==null){
             System.out.println("Empty LL");
@@ -43,7 +65,7 @@ public class LL {
     }
 
     void appendLL(int value){
-        System.out.println("Appending "+value);
+
         Node node = new Node(value);
         if (len==0){
             head = node;
