@@ -1,4 +1,4 @@
-package BasicLinkedList;
+package LinkedList.BasicLinkedList;
 
 public class Node {
     int value;
