@@ -8,13 +8,25 @@ public class CountDigits {
 
         Scanner in = new Scanner(System.in);
         System.out.println("Enter number : ");
-        int n = in.nextInt();
-        System.out.println("Number of digits : "+countDigit(n));
-        System.out.println("Number of digits divisbile by 'n' : "+countDigits(n));
+        long n = in.nextLong();
+        int count=0;
+        System.out.println("Numbers of Digit :"+recCountDigit(n,count));
+        int x = (int) n;
+        System.out.println("Number of digits : "+countDigit(x));
+        System.out.println("Number of digits divisbile by 'n' : "+countDigits(x));
 
 
 
+    }
 
+    private static long recCountDigit(long n,int count) {
+        if (n<=0){
+            return count;
+        }
+        n = n/10;
+        count++;
+
+        return recCountDigit(n,count);
     }
 
     /*
